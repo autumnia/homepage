@@ -29,23 +29,27 @@
     <div class="container-fluid mt-3">
         <div class="row">
             <!-- 좌측 메뉴 -->
-            <div id="left-menu" class="col-md-3"></div>
-            
-            <!-- 우측 컨텐츠 -->
-            <main class="col-md-3 ms-sm-auto col-lg-10 px-md-4">
-                <h1 class="mt-4">소소한 기록</h1>
-                <div id="player"></div>
-            </main>
+            <div id="left-menu" class="col-md-2"></div>
 
-            <main class="col-md-3 ms-sm-auto col-lg-10 px-md-4">
-                <h1 class="mt-4">소소한 기록</h1>
-                <div id="player"></div>
-            </main>
+            <!-- 우측 컨텐츠 -->
+            <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="mt-4">2025</h1>
+                        <div id="player1"></div>
+                        
+                        <h1 class="mt-4">2024</h1>
+                        <div id="player2"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="mt-4">2023</h1>
+                        <div id="player3"></div>
             
-            <main class="col-md-3 ms-sm-auto col-lg-10 px-md-4">
-                <h1 class="mt-4">소소한 기록</h1>
-                <div id="player"></div>
-            </main>            
+                        <h1 class="mt-4">2022</h1>
+                        <div id="player4"></div>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
 
@@ -54,12 +58,14 @@
         // YouTube API 스크립트 동적 로드
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var tag1 = document.getElementsByTagName('script')[0];
+        tag1.parentNode.insertBefore(tag, tag1);
 
         // YouTube 플레이어 생성
         function onYouTubeIframeAPIReady() {
-            new YT.Player('player', {
+
+
+            new YT.Player('player1', {
                 height: '315',
                 width: '560',
                 videoId: 'JxURyrD6FUo', // 원하는 유튜브 영상 ID 입력
@@ -70,7 +76,6 @@
             });
         }
     </script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
