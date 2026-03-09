@@ -32,83 +32,40 @@
     />
     <link rel="stylesheet" href="css/app.css" />
     <title>Autumnia</title>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // fetch("common/top-menu.html")
-        //   .then((res) => res.text())
-        //   .then((data) => {
-        //     document.getElementById("top-menu").innerHTML = data;
-        //   });
-        // fetch("common/left-menu.html")
-        //   .then((res) => res.text())
-        //   .then((data) => {
-        //     document.getElementById("left-menu").innerHTML = data;
-        //   });
-        // fetch("right-content.html").then(res => res.text()).then(data => {
-        //     document.getElementById("right-content").innerHTML = data;
-        // });
-      });
-    </script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-lg sticky-top"
-    >
-      <div class="container">
-        <a href="index.html" class="navbar-brand align-middle">
-          <h3 class="m-0">
-            <img
-              src="./images/logos/autumnia_logo.webp"
-              alt="Logo"
-              height="36px"
-            />
-            Autumnia
-          </h3>
-        </a>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("common/top-menu.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("top-menu").innerHTML = data;
+          });
+      });
+    </script>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a href="#intro" class="nav-link"> Intro </a>
-            </li>
-            <li class="nav-item">
-              <a href="#services" class="nav-link"> Services </a>
-            </li>
-            <li class="nav-item">
-              <a href="#slogan" class="nav-link"> Slogan </a>
-            </li>
-            <li class="nav-item">
-              <a href="#gallery" class="nav-link"> Gallery </a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link"> Contact </a>
-            </li>
-            <li class="nav-item">
-              <a href="#find-us" class="nav-link"> Find us </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <script>
+      // document.addEventListener("DOMContentLoaded", function () {
+      // fetch("common/top-menu.html")
+      //   .then((res) => res.text())
+      //   .then((data) => {
+      //     document.getElementById("top-menu").innerHTML = data;
+      //   });
+      // fetch("common/left-menu.html")
+      //   .then((res) => res.text())
+      //   .then((data) => {
+      //     document.getElementById("left-menu").innerHTML = data;
+      //   });
+      // fetch("right-content.html").then(res => res.text()).then(data => {
+      //     document.getElementById("right-content").innerHTML = data;
+      // });
+      // });
+    </script>
 
     <!-- 상단 메뉴 -->
-    <!--<div class="container">
-      <row>
-        <div id="top-menu"></div>
-      </row>
-    </div>-->
+    <div class="container">
+      <div id="top-menu"></div>
+    </div>
 
     <div class="container mt-3">
       <div class="row">
