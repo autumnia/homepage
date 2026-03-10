@@ -45,193 +45,84 @@
     </script>
 
     <script>
-      // document.addEventListener("DOMContentLoaded", function () {
-      // fetch("common/top-menu.html")
-      //   .then((res) => res.text())
-      //   .then((data) => {
-      //     document.getElementById("top-menu").innerHTML = data;
-      //   });
-      // fetch("common/left-menu.html")
-      //   .then((res) => res.text())
-      //   .then((data) => {
-      //     document.getElementById("left-menu").innerHTML = data;
-      //   });
-      // fetch("right-content.html").then(res => res.text()).then(data => {
-      //     document.getElementById("right-content").innerHTML = data;
-      // });
-      // });
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("pages/top.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("top").innerHTML = data;
+          });
+      });
     </script>
 
     <!-- 상단 메뉴 -->
     <div class="container">
       <div id="top-menu"></div>
 
-      <section id="top">
-        <div
-          class="section-content overlay d-flex justify-content-center align-items-center"
-        >
-          <div class="container-xxl">
+      <section id="top"></section>
+
+      <section id="intro">
+        <div class="section-content">
+          <div class="container intro">
             <div class="row align-items-center">
-              <div class="col-md-9 welcome">
-                <h1 class="welcome-title fw-light">
-                  Welcome to
-                  <span class="text-warning fw-bold">my website</span>.
-                  <p>세상은 당신이 바라보는 그것 자체이다.</p>
-                </h1>
-                <div class="divider"></div>
-                <div class="row welcome-desc">
-                  <p class="col-col-sm-10 col-md-12 lead">
-                    기억이 없다면 창조도 없다.
-                  </p>
-                  <!--<p class="col-sm-2 col-md-12">
-                    <a href="#" class="btn btn-primary">Read more</a>
-                  </p>-->
+              <div class="col-md-6 intro-first">
+                <div class="row px-md-3">
+                  <div class="col-6">
+                    <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+                      <div
+                        class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
+                        <h3 class="fw-light">
+                          <a target="_blank" href="https://www.youtube.com/watch?v=Me5qG3Nlilk" 
+                          class="link-light text-decoration-none">2025</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+                      <div
+                        class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
+                        <h3 class="fw-light">
+                          <a href="#" class="link-light text-decoration-none">Link 2</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+                      <div
+                        class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
+                        <h3 class="fw-light">
+                          <a href="#" class="link-light text-decoration-none">Link 3</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+                      <div
+                        class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
+                        <h3 class="fw-light">
+                          <a href="#" class="link-light text-decoration-none">Link 4</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <!--<div class="col-md-3 d-none d-md-block letsgo">
-                <div class="card card-body letsgo-card">
-                  <div class="letsgo my-3">
-                    <h4 class="letsgo-title card-title text-dark mb-3">
-                      Easy contact!
-                    </h4>
-                    <p class="card-text text-secondary">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde, tempora.
-                    </p>
-                  </div>
-                  <div class="letsgo-card-form">
-                    <form>
-                      <div class="mb-3">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <input
-                          type="tel"
-                          class="form-control"
-                          placeholder="Your phone"
-                        />
-                      </div>
-                      <div class="form-check mb-3">
-                        <input
-                          type="text"
-                          class="form-check-input"
-                          id="flexCheckDefault"
-                        />
-                        <label
-                          for="flexCheckDefault"
-                          class="form-check-label text-secondary"
-                        >
-                          I agree to provide privacy.
-                        </label>
-                      </div>
-                      <p class="mb-3">
-                        <button class="btn btn-primary w-100" type="button">
-                          Submit
-                        </button>
-                      </p>
-                    </form>
-                  </div>
+              <div class="col-md-6 intro-second">
+                <h5 class="fw-light">Climbing World</h5>
+                <h1 class="mb-4">나의 취미</h1>
+                <div class="intro-text">
+                  <p class="lead">저의 취미는 클라이밍입니다. 처음에는 단순히 운동을 위해 시작했지만, 지금은 제 삶에서 큰 즐거움이 된 활동입니다. 벽에 있는 작은 홀드를 하나씩 잡으며 올라가는 과정은 마치 퍼즐을 풀어가는 것처럼 흥미롭고, 정상에 도달했을 때의 성취감은 말로 표현하기 어려울 만큼 특별합니다.</p>
                 </div>
-              </div>-->
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
-
-    <div class="container mt-3">
-      <div class="row">
-        <!-- 좌측 메뉴 -->
-        <div id="left-menu" class="col-md-1"></div>
-
-        <!-- 메인 컨텐츠 -->
-        <div class="col-md-11">
-          <h5 class="display-1">메인 컨텐츠</h5>
-
-          <section class="mb-5">
-            <h3 class="fw-bold">AI 스터디 자료</h3>
-            <ul class="list-group">
-              <li class="list-group-item"><strong>Java:</strong> JDK 21</li>
-              <li class="list-group-item">
-                <strong>Spring Boot gradle:</strong>
-                <code
-                  >implementation
-                  'org.springframework.ai:spring-ai-openai-spring-boot-starter'</code
-                >
-              </li>
-              <li class="list-group-item">
-                <strong>IDE:</strong> IntelliJ IDEA Communication
-              </li>
-              <li class="list-group-item">
-                <strong>연동:</strong> ChatGPT API Key, YouTube API Key
-              </li>
-              <li class="list-group-item">
-                RAG pgvector 일반파일, PDF, chat + sql 진행 중...
-              </li>
-            </ul>
-          </section>
-
-          <section id="M01L01" class="mb-5">
-            <h3 class="fw-bold">이미지 생성</h3>
-            <img
-              src="images/inputtext_to_gen_image.png"
-              class="img-fluid rounded shadow"
-              alt="이미지 생성"
-            />
-          </section>
-
-          <!--<section class="mb-5">
-            <h3 class="fw-bold">이미지를 텍스트로 변환 관련 자료 링크 추천</h3>
-            <img
-              src="images/math_to_text_url.png"
-              class="img-fluid rounded shadow"
-              alt="이미지를 텍스트로 변환"
-            />
-          </section>-->
-
-          <!--<section class="mb-5">
-                        <h3 class="fw-bold">텍스트를 음성으로 변환</h3>
-                        <img
-                            src="images/text_to_speech.png"
-                            class="img-fluid rounded shadow"
-                            alt="텍스트를 음성으로 변환"
-                        />
-                    </section>-->
-
-          <!--<section class="mb-5">
-                        <h3 class="fw-bold">음성을 텍스트로 변환</h3>
-                        <img
-                            src="images/speech_to_text.png"
-                            class="img-fluid rounded shadow"
-                            alt="음성을 텍스트로 변환"
-                        />
-                    </section>-->
-
-          <!--<section class="mb-5">
-                        <h3 class="fw-bold">음성을 이미지로 변환</h3>
-                        <img
-                            src="images/voice_to_image.png"
-                            class="img-fluid rounded shadow"
-                            alt="음성을 이미지로 변환"
-                        />
-                    </section>-->
-
-          <!--<section class="mb-5">
-                        <h3 class="fw-bold">사용자 친화 검색</h3>
-                        <img
-                            src="images/user_friendly_search.png"
-                            class="img-fluid rounded shadow"
-                            alt="사용자 친화 검색"
-                        />
-                    </section>-->
-        </div>
-      </div>
-    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
