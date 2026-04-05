@@ -36,7 +36,7 @@
   <body>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("common/top-menu.html")
+        fetch("./common/top-menu.html")
           .then((res) => res.text())
           .then((data) => {
             document.getElementById("top-menu").innerHTML = data;
@@ -46,7 +46,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("pages/top.html")
+        fetch("./pages/top.html")
           .then((res) => res.text())
           .then((data) => {
             document.getElementById("top").innerHTML = data;

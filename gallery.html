@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+	<style>
+		#gallery {
+			background-color: #fff;
+			/* background-color: rgba(96, 125, 139, 0.35); */
+		}
+
+		#gallery .divider {
+			width: 10%;
+			margin: 2rem auto;
+			border-top: 2px solid #000;
+		}
+
+		#gallery .gallery-item .card {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 12rem;
+			transition: 0.3s ease-in-out;
+		}
+
+		#gallery .gallery-item .card:hover {
+			box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+		}
+
+		#gallery .card .overlay {
+			background-color: rgba(96, 125, 139, 0.3);
+			opacity: 0;
+			padding: 1.5rem;
+			border-radius: 0.25rem;
+			transition: all 0.4s ease-in-out;
+		}
+
+		#gallery .card .overlay:hover {
+			opacity: 1;
+			color: #fff;
+		}
+
+		#gallery .gallery-item:nth-of-type(1) .card {
+			background-image: url('https://media.istockphoto.com/id/2250388626/ko/%EC%82%AC%EC%A7%84/%EB%A0%88%EB%8B%8C-%EB%B4%89%EC%9A%B0%EB%A6%AC-%EB%93%B1%EB%B0%98-%EC%A4%91-%EC%96%BC%EC%9D%8C-%EB%B9%99%ED%95%98%EC%9D%98-%ED%81%AC%EB%A0%88%EB%B0%94%EC%8A%A4%EB%A5%BC-%EB%84%98%EC%96%B4-%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%A8%B8%EC%9D%98-%EC%83%9D%EA%B8%B0-%EB%84%98%EC%B9%98%EB%8A%94-%EA%B4%91%EA%B0%81-%EC%B4%AC%EC%98%81-%EC%9E%A5%EB%A9%B4-%EB%A7%91%EC%9D%80-%ED%95%98%EB%8A%98%EC%9D%B4-%EB%B0%B0%EA%B2%BD%EC%97%90-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4-%EA%B7%B9%ED%95%9C-%ED%99%9C%EB%8F%99%EA%B0%80%EB%93%A4%EC%9D%98-%EA%B3%A0%EC%82%B0-%EB%93%B1%EC%82%B0-%EA%B0%9C%EB%85%90-%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?s=2048x2048&w=is&k=20&c=L9tJqtjekb-exApHnGaj4lJl3F9MuL1sHVxr2iFXSLI=');
+		}
+
+		#gallery .gallery-item:nth-of-type(2) .card {
+			background-image: url('https://images.unsplash.com/photo-1564769662533-4f00a87b4056?q=80&w=1244&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+
+		#gallery .gallery-item:nth-of-type(3) .card {
+			background-image: url('https://media.istockphoto.com/id/1435517138/ko/%EC%82%AC%EC%A7%84/%EC%8B%A4%EB%82%B4-%EB%93%B1%EB%B0%98-%EB%B2%BD%EC%97%90-%EB%93%B1%EB%B0%98%ED%95%98%EB%8A%94-%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%9A%B0%EB%A8%BC-%ED%9B%88%EB%A0%A8.jpg?s=2048x2048&w=is&k=20&c=EPIYQQehnvI-HrDWriH-_LzTYMdjnCvOgvketmlUEV8=');
+		}
+
+		#gallery .gallery-item:nth-of-type(4) .card {
+			background-image: url('https://images.unsplash.com/photo-1524755968487-e44edcb96e1d?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+
+		#gallery .gallery-item:nth-of-type(5) .card {
+			background-image: url('https://plus.unsplash.com/premium_photo-1684315354193-1bdd8a54c81f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+
+		#gallery .gallery-item:nth-of-type(6) .card {
+			background-image: url('https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+
+		#gallery .gallery-item:nth-of-type(7) .card {
+			background-image: url('https://images.unsplash.com/photo-1682685797743-3a7b6b8d8149?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+
+		#gallery .gallery-item:nth-of-type(8) .card {
+			background-image: url('https://images.unsplash.com/photo-1577580529485-d39b28695fdf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+
+		#gallery .gallery-item:nth-of-type(9) .card {
+			background-image: url('https://plus.unsplash.com/premium_photo-1664303435624-774bc0346c96?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+
+	</style>
+    <title>Autumnia</title>
+  </head>
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("./common/top-menu.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("top-menu").innerHTML = data;
+          });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("./pages/top.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("top").innerHTML = data;
+          });
+      });
+    </script>
+
+
+    <!-- 상단 메뉴 -->
+    <div class="container">
+		<div id="top-menu"></div>
+
+		<section id="top"></section>
+
+		<br />
+
+		<section id="gallery">
+		<div class="section-content">
+			<div class="container gallery">
+				<div class="gallery-header text-center mb-5">
+					<h1 class="display-4">Gallery</h1>
+					<div class="divider"></div>
+						<p class="lead text-secondary">climbing</p>
+					</div>
+					<div class="row gallery-body">
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 1</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 2</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 3</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 4</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 5</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 6</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 7</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 8</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-6 mb-4 gallery-item">
+						<div class="card card-body border-0 p-0">
+						<div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
+							<h2 class="gallery-title">Gallery 9</h2>
+							<a class="link-warning text-decoration-none" href="#">View this gallery</a>
+						</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		</section>
+    </div>
+	  
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
+
